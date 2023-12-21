@@ -7,15 +7,15 @@ console.log('server is running...')
 let transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
-        user: 'wanwanmlbb93@gmail.com', // Ganti dengan alamat email pengirim
-        pass: 'ssun wfxi tkpf jpgz' // Ganti dengan kata sandi email pengirim
+        user: '', // Ganti dengan alamat email pengirim
+        pass: '' // Ganti dengan kata sandi email pengirim
     }
 });
 
 // Konfigurasi email yang akan dikirim
 let mailOptions = { 
-    from: 'wanwanmlbb93@gmail.com', // Alamat email pengirim
-    to: 'hardiantisangaji1204@gmail.com', // Alamat email penerima
+    from: '', // Alamat email pengirim
+    to: '', // Alamat email penerima
     subject: 'Happy Birthday Anthyy !',
     text: 'buka ducoment dibawah ini yaa cantik !',
     attachments: [
@@ -28,7 +28,7 @@ let mailOptions = {
 };
 
 // Jadwalkan pengiriman email besok pada jam 00.00
-cron.schedule('0 0 22 12 *', () => {
+cron.schedule('0 0 * * *', () => {
     // Kirim email
     transporter.sendMail(mailOptions, (error, info) => {
         if (error) {
